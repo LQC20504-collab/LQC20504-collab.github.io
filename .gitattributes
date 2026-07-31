@@ -1,0 +1,10 @@
+# Auto-detect text files and use LF line endings consistently
+* text=auto
+
+# Force LF for source/config files (prevents CRLF issues cross-platform)
+*.md text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.html text eol=lf
+*.js text eol=lf
+*.css text eol=lf

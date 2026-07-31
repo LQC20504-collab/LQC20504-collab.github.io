@@ -1,0 +1,11 @@
+# Hugo build output - never commit
+public/
+
+# Hugo resources cache
+resources/
+
+# Hugo build lock file
+.hugo_build.lock
+
+# Temporary files
+*.tmp
