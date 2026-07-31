@@ -8,6 +8,12 @@ hasCJKLanguage: true
 timeZone: "Asia/Shanghai"
 paginate: 10
 
+# 允许 Markdown 中的原始 HTML（如 <details> 折叠块）
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 outputs:
   home:
     - HTML

@@ -7,8 +7,10 @@ hideMeta: true
 ## Project List
 
 <!-- TODO: Use the template below for each real project -->
+<!-- Click a project title to expand/collapse details (collapsed by default, title only) -->
 
-### AI Forest Resource Survey Database
+<details>
+<summary><h3>AI Forest Resource Survey Database</h3></summary>
 
 - Intro: A database course final project, a forest resource survey database system based on Spring Boot 4 + MyBatis + MySQL 9, integrated with a Flask AI service for volume prediction.
 - Tech Stack: 
@@ -20,8 +22,13 @@ hideMeta: true
 |Frontend|Pure HTML/CSS/JS, ECharts 5, Leaflet 1.9.4 + Draw|
 - Link: [GitHub Repo](https://github.com/LQC20504-collab/forest_resource_db)
 
-### PhotogrammetryApp
+</details>
+
+<details>
+<summary><h3>PhotogrammetryApp</h3></summary>
 
 - Intro: A programming experiment for the Photogrammetry course, implementing spatial resection and spatial intersection based on C++/MFC and Eigen library.
 - Tech Stack: C++, MFC
 - Link: [GitHub Repo](https://github.com/LQC20504-collab/PhotogrammetryApp)
+
+</details>
