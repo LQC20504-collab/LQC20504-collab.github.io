@@ -109,7 +109,7 @@ content/
 ├── about/     关于我（个人简介）
 ├── projects/  项目作品（展示你的项目）
 ├── resume/    技能与履历
-└── en/        英文版内容（与上面结构对应）
+content-en/        英文版内容（与上面结构对应）
 ```
 
 想改"关于我"页面，就编辑 `content/about/index.md`，然后执行 add → commit → push 即可。
