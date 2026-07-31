@@ -20,32 +20,6 @@ params:
   ShowWordCount: true
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
-  homeInfoParams:
-    Title: "你好，我是 LQC20504 👋"
-    Content: "欢迎来到我的个人主页。这里记录我的学习、项目与思考。"
-
-menu:
-  main:
-    - identifier: about
-      name: 关于我
-      url: /about/
-      weight: 10
-    - identifier: posts
-      name: 博客
-      url: /posts/
-      weight: 20
-    - identifier: projects
-      name: 项目
-      url: /projects/
-      weight: 30
-    - identifier: resume
-      name: 履历
-      url: /resume/
-      weight: 40
-    - identifier: search
-      name: 搜索
-      url: /search/
-      weight: 50
 
 languages:
   zh:
@@ -55,6 +29,31 @@ languages:
     title: "LQC20504 的个人主页"
     params:
       description: "LQC20504 的个人网站 - 博客、项目与履历"
+      homeInfoParams:
+        Title: "你好，我是 LQC20504 👋"
+        Content: "欢迎来到我的个人主页。这里记录我的学习、项目与思考。"
+    menu:
+      main:
+        - identifier: about
+          name: 关于我
+          url: /about/
+          weight: 10
+        - identifier: posts
+          name: 博客
+          url: /posts/
+          weight: 20
+        - identifier: projects
+          name: 项目
+          url: /projects/
+          weight: 30
+        - identifier: resume
+          name: 履历
+          url: /resume/
+          weight: 40
+        - identifier: search
+          name: 搜索
+          url: /search/
+          weight: 50
   en:
     label: English
     weight: 2
@@ -62,3 +61,28 @@ languages:
     title: "LQC20504's Homepage"
     params:
       description: "LQC20504's personal website - blog, projects & resume"
+      homeInfoParams:
+        Title: "Hi, I'm LQC20504 👋"
+        Content: "Welcome to my personal homepage. Here I record my learning, projects, and thoughts."
+    menu:
+      main:
+        - identifier: about
+          name: About
+          url: /en/about/
+          weight: 10
+        - identifier: posts
+          name: Blog
+          url: /en/posts/
+          weight: 20
+        - identifier: projects
+          name: Projects
+          url: /en/projects/
+          weight: 30
+        - identifier: resume
+          name: Resume
+          url: /en/resume/
+          weight: 40
+        - identifier: search
+          name: Search
+          url: /en/search/
+          weight: 50
