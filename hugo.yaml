@@ -58,7 +58,7 @@ languages:
   en:
     label: English
     weight: 2
-    contentDir: content/en
+    contentDir: content-en
     title: "LQC20504's Homepage"
     params:
       description: "LQC20504's personal website - blog, projects & resume"
