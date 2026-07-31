@@ -8,6 +8,12 @@ hasCJKLanguage: true
 timeZone: "Asia/Shanghai"
 paginate: 10
 
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # necessary for PaperMod search (index.json)
+
 params:
   env: production
   description: "LQC20504 的个人网站 - 博客、项目与履历"
