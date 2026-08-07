@@ -125,7 +125,7 @@ ArcGIS 10 的空间分析功能主要包括
       - 寻找环路
       - 寻找通路
       - 爆管分析
-      ![image-1](https://api2.mubu.com/v3/document_image/6ac84559-cb36-4b6f-bdf8-11154f7fb3ad.jpg)
+      ![image-1](/images/gis-knowledge/mubu-01.jpg)
 
 # 栅格数据的空间分析
 
@@ -279,7 +279,7 @@ TIN(Triangulation Irregular Net)
   - 克里金方法
     - 克里金方法是以空间自相关性为基础，利用原始数据和半方差函数的结构性，对区域化变量的未知样点进行无偏估值的插值方法，是地统计学的主要内容之一。
   - 克里金插值方法的主要执行流程
-    ![image-1](https://api2.mubu.com/v3/document_image/d7d6e185-436c-44f9-bc9d-9b15b699f614.jpg)
+    ![image-1](/images/gis-knowledge/mubu-02.jpg)
   - 克里金方法的分类和适用条件
     - 几种类型
       - 普通克里金
@@ -314,10 +314,10 @@ TIN(Triangulation Irregular Net)
   - 距离模型
     - 从出发点到目的地的最佳路径的选择、邮递员的最短路径等
 - 模型的建立流程
-  ![image-1](https://api2.mubu.com/v3/document_image/31168707_c3226e4e-8dc2-4750-fb12-ae74e06af0cb.jpeg)
+  ![image-1](/images/gis-knowledge/mubu-03.jpg)
 
 图解建模
 - 图解建模是指用直观的图形语言将一个具体的过程模型表达出来。
 
 模型形成的过程
-![image-1](https://api2.mubu.com/v3/document_image/31168707_32bcadd9-522d-4111-d1cd-06a6f1b149b2.jpeg)
+![image-1](/images/gis-knowledge/mubu-04.jpg)

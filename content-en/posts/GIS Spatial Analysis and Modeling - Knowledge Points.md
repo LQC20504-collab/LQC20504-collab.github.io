@@ -125,7 +125,7 @@ Network Analysis
       - Finding loops
       - Finding paths
       - Pipe burst analysis
-      ![image-1](https://api2.mubu.com/v3/document_image/6ac84559-cb36-4b6f-bdf8-11154f7fb3ad.jpg)
+      ![image-1](/images/gis-knowledge/mubu-01.jpg)
 
 # Raster Data Spatial Analysis
 
@@ -279,7 +279,7 @@ Spatial Interpolation and Geostatistical Simulation
   - Kriging
     - Kriging is an interpolation method based on spatial autocorrelation that uses original data and the structure of the semivariogram to provide unbiased estimates of unknown sample points of regionalised variables. It is a core component of geostatistics.
   - Main workflow of Kriging interpolation
-    ![image-1](https://api2.mubu.com/v3/document_image/d7d6e185-436c-44f9-bc9d-9b15b699f614.jpg)
+    ![image-1](/images/gis-knowledge/mubu-02.jpg)
   - Classification and applicable conditions of Kriging methods
     - Several types:
       - Ordinary Kriging
@@ -314,10 +314,10 @@ Spatial Analysis Modeling
   - Distance models
     - Optimal path selection from origin to destination, shortest path for postmen, etc.
 - Model building workflow
-  ![image-1](https://api2.mubu.com/v3/document_image/31168707_c3226e4e-8dc2-4750-fb12-ae74e06af0cb.jpeg)
+  ![image-1](/images/gis-knowledge/mubu-03.jpg)
 
 Diagrammatic Modeling
 - Diagrammatic modeling uses intuitive graphical language to express a specific process model.
 
 Model Formation Process
-![image-1](https://api2.mubu.com/v3/document_image/31168707_32bcadd9-522d-4111-d1cd-06a6f1b149b2.jpeg)
+![image-1](/images/gis-knowledge/mubu-04.jpg)
