@@ -32,3 +32,13 @@ hideMeta: true
 - Link: [GitHub Repo](https://github.com/LQC20504-collab/PhotogrammetryApp)
 
 </details>
+
+<details>
+<summary><h3>TrendRadar — GIS/Remote Sensing Hot News Monitor & Push</h3></summary>
+
+- Intro: A customized TrendRadar fork focused on GIS / Remote Sensing / Digital Earth / surveying postgraduate exam news, aggregating 20+ WeChat official accounts and professional journal feeds with automatic fetching, translation, AI analysis and push (Feishu / ntfy), plus a web report.
+- Tech Stack: Python, GitHub Actions, WeWe RSS, Zhipu GLM-4-Flash, SQLite, GitHub Pages
+- Web: [Online Report](https://lqc20504-collab.github.io/TrendRadar/)
+- Link: [GitHub Repo](https://github.com/LQC20504-collab/TrendRadar)
+
+</details>
