@@ -33,6 +33,27 @@ params:
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
 
+  # 评论区（giscus，基于 GitHub Discussions，登录即 GitHub 账号）
+  # 使用方法见 GUIDE.md：先在 GitHub 仓库开启 Discussions 并安装 giscus App，
+  # 再到 https://giscus.app 生成 repoId / categoryId 填入下方。
+  giscus:
+    repo: "LQC20504-collab/LQC20504-collab.github.io"
+    repoId: "R_kgDOTozdJw"            # ← 待你在 giscus.app 生成后填入，填好前评论区不显示
+    category: "Comments"  # ← 与仓库 Discussions 里的分类名一致
+    categoryId: "DIC_kwDOTozdJ84DDb-J"        # ← 待你填入
+    mapping: "pathname"
+    strict: "0"
+    reactionsEnabled: "1"
+    emitMetadata: "0"
+    inputPosition: "bottom"
+    theme: "preferred_color_scheme"
+    lang: "zh-CN"         # 英文页面会自动切换为 en
+    loading: "lazy"
+
+  # 访问量统计（不蒜子，免费免注册；关闭请改 enable: false）
+  busuanzi:
+    enable: true
+
 languages:
   zh:
     label: 中文

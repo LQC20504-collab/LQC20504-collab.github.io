@@ -3,6 +3,7 @@ title: "你好，世界！"
 description: "我的第一篇文章"
 date: 2026-07-31
 tags: ["随笔"]
+comments: true
 ---
 
 这是我的第一篇博客文章。

@@ -3,6 +3,7 @@ title: "Introduction to Geographic Information Systems - Knowledge Points"
 description: "Knowledge Points Summary"
 date: 2026-08-01
 tags: ["Knowledge Points"]
+comments: true
 ---
 
 # Chapter 1 Introduction

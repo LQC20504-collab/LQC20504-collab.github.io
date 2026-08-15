@@ -3,6 +3,7 @@ title: "GIS空间分析与建模知识点整理"
 description: "知识点整理"
 date: 2026-08-07
 tags: ["知识点整理"]
+comments: true
 ---
 
 # GIS空间分析导论

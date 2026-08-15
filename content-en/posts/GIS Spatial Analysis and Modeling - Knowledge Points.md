@@ -3,6 +3,7 @@ title: "GIS Spatial Analysis and Modeling - Knowledge Points"
 description: "Knowledge Points Summary"
 date: 2026-08-07
 tags: ["Knowledge Points"]
+comments: true
 ---
 
 # Introduction to GIS Spatial Analysis

@@ -3,6 +3,7 @@ title: "Hello, World!"
 description: "My first post"
 date: 2026-07-31
 tags: ["notes"]
+comments: true
 ---
 
 This is my first blog post.

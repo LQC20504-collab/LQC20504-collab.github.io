@@ -1,0 +1,8 @@
+{{- /* 网站访问量 / 访客数（不蒜子 site_pv / site_uv），每个页面页脚显示 */ -}}
+{{- if site.Params.busuanzi.enable }}
+<script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<div class="site-stats">
+    <span id="busuanzi_container_site_pv">{{ i18n "site_pv" | default "网站访问" }} <span id="busuanzi_value_site_pv"></span></span>
+    <span id="busuanzi_container_site_uv">{{ i18n "site_uv" | default "访客" }} <span id="busuanzi_value_site_uv"></span></span>
+</div>
+{{- end }}

@@ -9,6 +9,8 @@
 - **Hugo**: 静态网站生成器，把 Markdown 文章变成网页
 - **PaperMod**: 简洁美观的主题（就是你现在看到的样式）
 - **GitHub Actions**: 自动部署流水线——你推送代码后，它自动构建并发布到 `https://LQC20504-collab.github.io/`
+- **giscus**: 评论区服务，评论保存在 GitHub Discussions 里，读者用 GitHub 账号登录后即可评论
+- **不蒜子**: 免费的网站访问量/文章阅读量统计服务
 
 你不需要理解这些工具怎么工作，只要学会下面的操作就行。
 
@@ -98,10 +100,46 @@ git push
 | 端口被占用，`hugo server` 报错 | 换个端口: `hugo server -p 1323` |
 | 推送后网站没更新 | 等 2 分钟再刷新；到 GitHub 仓库的 Actions 标签页查看是否失败 |
 | 文章显示不出来 | 检查 front matter 的 `date` 是否为过去日期，`draft: true` 要删掉 |
+| 评论区不显示 | 检查 `hugo.yaml` 里 `params.giscus.repoId`/`categoryId` 是否已填；仓库是否开启了 Discussions；是否安装了 giscus 应用 |
+| 想让某篇文章不显示评论 | 在文章 front matter 里加一行 `comments: false` |
 
 ---
 
-## 六、内容板块说明
+## 六、评论区（giscus）—— 如何开启
+
+这是一次性设置（约 5 分钟）。评论区支持：**GitHub 账号登录**、显示头像和用户名、给评论**点赞（👍）**、按**时间排序**（最新/最旧按钮）。
+
+1. **开启仓库 Discussions**：打开 GitHub 仓库 `https://github.com/LQC20504-collab/LQC20504-collab.github.io` → **Settings → General** → 往下滚动到 **Features** → 勾选 **Discussions** 并保存。
+2. **安装 giscus 应用**：浏览器打开 `https://github.com/apps/giscus` → 点击 **Install** → 选择安装到 `LQC20504-collab/LQC20504-collab.github.io` 这一个仓库。
+3. **新建评论分类（可选）**：如果仓库 Discussions 里没有分类，先到仓库 **Discussions** 页面新建一个，比如叫 `Comments`。
+4. **获取仓库 ID**：打开 `https://giscus.app`，Repository 一栏填 `LQC20504-collab/LQC20504-collab.github.io`，选择分类，页面会自动生成一段嵌入代码。
+5. **填入配置文件**：把生成的 `data-repo-id` 和 `data-category-id` 的值，复制到项目根目录 `hugo.yaml` 里 `params.giscus.repoId` 和 `params.giscus.categoryId`（引号内）。如果分类名和默认的 `Comments` 不同，也一并修改 `params.giscus.category`。
+6. **发布**：执行 add → commit → push（见第三节），等 2 分钟，文章下方就会出现评论区。
+
+> 小贴士：新文章默认带 `comments: true`（自动开启评论）；若某篇文章不想要评论，在它的 front matter 加一行 `comments: false` 即可。
+
+---
+
+## 七、如何删除评论
+
+评论数据保存在 GitHub 仓库的 **Discussions** 里，删除后刷新网页即生效，**不需要重新推送网站**。
+
+- **删除单条评论**：GitHub 仓库 → **Discussions** 标签 → 找到对应文章的讨论（标题形如 `Comments for: posts/文章名`）→ 鼠标移到该评论上 → 点击右下角的 **⋯** → **Delete**。
+- **删除某篇文章的全部评论**：进入该讨论 → 右上角 **⋯** → **Delete discussion**。
+- **禁止再评论（锁定）**：进入该讨论 → 右上角 **⋯** → **Lock conversation**。
+- 注意：删除的评论无法恢复。
+
+---
+
+## 八、阅读次数与网站访问量
+
+- 每篇博客文章底部显示 **本文阅读 N 次**；所有页面底部显示 **网站访问 N 次 · 访客 N 人**。
+- 统计由第三方免费服务 **不蒜子** 提供，无需注册。
+- 想关闭统计：把 `hugo.yaml` 里 `params.busuanzi.enable` 改为 `false`，然后 add → commit → push。
+
+---
+
+## 九、内容板块说明
 
 ```
 content/
@@ -116,7 +154,7 @@ content-en/        英文版内容（与上面结构对应）
 
 ---
 
-## 七、学习资源（可选）
+## 十、学习资源（可选）
 
 - Markdown 语法速查: <https://www.markdownguide.org/cheat-sheet/>
 - Hugo 官方文档: <https://gohugo.io/documentation/>
