@@ -1,0 +1,38 @@
+/* ===== 不蒜子访问量 / 阅读次数统计样式 ===== */
+
+/* 页脚统计栏：与页脚同风格，居中、小字号、弱化颜色 */
+.site-stats {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55em;
+    max-width: calc(var(--main-width) + var(--gap) * 2);
+    margin: 0 auto;
+    padding: 0.25rem var(--gap) 1.4rem;
+    font-size: 12px;
+    line-height: 24px;
+    color: var(--secondary);
+}
+
+/* 文章阅读次数：居中、弱化 */
+.post-reading-count {
+    text-align: center;
+    margin-top: 1.5rem;
+    font-size: 13px;
+    color: var(--secondary);
+}
+
+/* 数据加载前隐藏计数容器（busuanzi 加载成功后会写入内联 display 显示） */
+[id^="busuanzi_container"] {
+    display: none;
+}
+
+.stat-icon {
+    width: 13px;
+    height: 13px;
+    opacity: 0.75;
+}
+
+.stat-sep {
+    opacity: 0.45;
+}

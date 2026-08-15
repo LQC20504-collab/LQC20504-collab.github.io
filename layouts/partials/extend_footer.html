@@ -1,8 +1,15 @@
 {{- /* 网站访问量 / 访客数（不蒜子 site_pv / site_uv），每个页面页脚显示 */ -}}
 {{- if site.Params.busuanzi.enable }}
 <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<div class="site-stats">
-    <span id="busuanzi_container_site_pv">{{ i18n "site_pv" | default "网站访问" }} <span id="busuanzi_value_site_pv"></span></span>
-    <span id="busuanzi_container_site_uv">{{ i18n "site_uv" | default "访客" }} <span id="busuanzi_value_site_uv"></span></span>
+<div class="site-stats" aria-label="站点统计">
+    <span id="busuanzi_container_site_pv" class="site-stat">
+        <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <span>{{ i18n "site_pv" | default "网站访问" }} <span id="busuanzi_value_site_pv"></span></span>
+    </span>
+    <span class="stat-sep" aria-hidden="true">·</span>
+    <span id="busuanzi_container_site_uv" class="site-stat">
+        <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span>{{ i18n "site_uv" | default "访客" }} <span id="busuanzi_value_site_uv"></span></span>
+    </span>
 </div>
 {{- end }}

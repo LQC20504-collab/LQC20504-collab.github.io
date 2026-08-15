@@ -1,6 +1,9 @@
 {{- /* 文章阅读次数（不蒜子 page_pv），仅在博客文章单页显示 */ -}}
 {{- if and (eq .Section "posts") site.Params.busuanzi.enable }}
 <div class="post-reading-count">
-    <span id="busuanzi_container_page_pv">{{ i18n "reading_count" | default "本文阅读" }} <span id="busuanzi_value_page_pv"></span></span>
+    <span id="busuanzi_container_page_pv" class="site-stat">
+        <svg class="stat-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+        <span>{{ i18n "reading_count" | default "本文阅读" }} <span id="busuanzi_value_page_pv"></span></span>
+    </span>
 </div>
 {{- end }}
