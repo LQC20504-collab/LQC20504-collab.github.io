@@ -19,3 +19,11 @@ This is my personal homepage.
 - Reddit: [Just_Panic_44](https://www.reddit.com/user/Just_Panic_44/)
 - X: [@alchaffel98427](https://x.com/alchaffel98427)
 - Instagram: [timo_alchaffel](https://www.instagram.com/timo_alchaffel/)
+
+### Hobbies
+- Favorite music producers: Vicetone, Avicii, Martin Garrix, Marshmello, Axero, Nicky Romero, SABAI
+- Favorite singers: James Blunt, Pu Shu, Eason Chan, Bai Ting
+- Favorite team: FC Bayern München
+- Favorite player: Josip Stanišić
+- Favorite TV series/movies: *Yes, Minister*, *Yes, Prime Minister*, *Drawing Sword*, *Romance of the Three Kingdoms*, *Dream of the Red Chamber*
+- Favorite books: *The Ordinary World*, *To Live*, *Dream of the Red Chamber*

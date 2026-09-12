@@ -23,3 +23,11 @@ hideMeta: true
 - Instagram: [timo_alchaffel](https://www.instagram.com/timo_alchaffel/)
 
 <!-- TODO: 补充其他联系方式（邮箱、社交账号等，注意隐私） -->
+
+### 爱好
+- 喜欢的音乐制作人：Vicetone, Avicii, Martin Garrix, Marshmello, Axero, Nicky Romero, SABAI
+- 喜欢的歌手：James Blunt, 朴树, 陈奕迅, 白挺
+- 喜欢的球队: 拜仁慕尼黑
+- 喜欢的球员：Josip Stanišić
+- 喜欢看的电视剧/电影：*Yes, Minister*, *Yes, Prime Minister*,《亮剑》,《三国演义》,《红楼梦》
+- 喜欢的书：《平凡的世界》,《活着》,《红楼梦》
