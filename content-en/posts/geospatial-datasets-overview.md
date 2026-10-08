@@ -1,6 +1,6 @@
 ---
-title: "What's in D:\\DATA: A Field Guide to Open Geospatial Datasets"
-description: "6,106 files and 233 GB spanning terrain, land cover, land surface temperature, nighttime lights, building height, and population. A quick reference to the public datasets involved: who made them, at what resolution, how to cite them, and where the traps are."
+title: "A Field Guide to Open Geospatial Datasets"
+description: "A quick reference to public datasets spanning terrain, land cover, land surface temperature, nighttime lights, building height, and population: who made them, at what resolution, how to cite them, and where the traps are."
 date: 2026-10-07
 tags: ["Geospatial Data", "Data Notes"]
 comments: true
@@ -8,9 +8,9 @@ ShowToc: true
 TocOpen: false
 ---
 
-I keep a folder at `D:\DATA`: 6,106 files, 233 GB, running from 30-metre terrain to 1-kilometre nighttime lights, from the urban expansion of 1984 to the land cover of 2025. Once a collection gets this big, you start forgetting where each piece came from, what resolution it is, and whose work you are supposed to cite.
+The data behind most urban land-surface work — from 30-metre terrain to 1-kilometre nighttime lights, from the urban expansion of 1984 to the land cover of 2025 — has no single place to look up where each piece came from, what resolution it is, and whose work you are supposed to cite.
 
-This post is my attempt to write that down. **One caveat up front: every parameter below is taken from official documentation and the original papers, not from what happens to be sitting in my folder** — my copy is neither complete nor necessarily current. Where I quote numbers I measured locally, it is only as a cross-check, and I flag it as such.
+This post is an attempt to write that down. **One caveat up front: every parameter below is taken from official documentation and the original papers.** Numbers measured during assembly are quoted only as a cross-check against published figures and are flagged as such.
 
 ## 1. Quick reference
 
@@ -46,7 +46,7 @@ Thermal infrared remote sensing has one fatal weakness: clouds. When a satellite
 - **Bonus**: the product also ships MODIS overpass time files (`View_Time`). Raw values run 0–240 with 255 as background; apply the official scale factor to get local solar time (valid 0–24, background 25.5). During production these were converted to UTC
 - **DOI**: `10.11888/Meteoro.tpdc.271252`
 
-One trap: the English readme bundled with my copy says **2000–2022**, while the dataset's metadata record has already been updated to **2000–2024**. Confirm which version you actually have before you build anything on it.
+One trap: some versions of the bundled English readme say **2000–2022**, while the dataset's metadata record has already been updated to **2000–2024**. Confirm which version you actually have before you build anything on it.
 
 ### MODIS LST — the layer everything else is built on
 
@@ -70,7 +70,7 @@ ECOSTRESS rides on the International Space Station. Because the ISS orbit is not
 - **Accuracy**: overall RMSE around 1.07 K against global validation sites, r² > 0.988, MAE around 0.4 K; a separate validation reported uncertainty below 1 K
 - **Band structure**: besides LST, L2 LSTE provides five emissivity bands (Emis1–Emis5, uint8, scale factor 0.002, valid range 0.49–1.0) together with quality layers; the official algorithm description is in the LP DAAC ECOSTRESS Level-2 user guide
 - **Levels**: L1B GEO (geolocation), L2 LSTE (native swath), L2G LSTE (resampled to the 70 m grid), L2T LSTE (tiled, e.g. `51RTP`)
-- **Versions**: my copy has both v001 (`ECOSTRESS_L2_LSTE_...`) and v002 (`ECOv002_L2_LSTE_...`). Use v002
+- **Versions**: v001 (`ECOSTRESS_L2_LSTE_...`) and v002 (`ECOv002_L2_LSTE_...`) both circulate; use v002
 - **Access**: NASA LP DAAC
 
 Note that L2T is a **tiled** product — the `51RTP` in the filename is an MGRS tile reference — while L2G has already been placed on a regular 70 m grid. For time-series work, prefer L2G.
@@ -80,7 +80,7 @@ Note that L2T is a **tiled** product — the `51RTP` in the filename is an MGRS 
 ### CLCD — annual land cover for China
 
 - **Full name**: China Land Cover Dataset
-- **Resolution**: 30 m; **annual from 1985 onward**. The official record I checked (National Cryosphere Desert Data Center, published 2023) covers 1985–2022; the newest Zenodo version is labelled through 2025 (v1.0.5)
+- **Resolution**: 30 m; **annual from 1985 onward**. The official record at the National Cryosphere Desert Data Center (published 2023) covers 1985–2022; the newest Zenodo version is labelled through 2025 (v1.0.5)
 - **Classes**: nine major types — cropland, forest, shrub, grassland, water, snow/ice, barren, impervious surface, wetland. A `CLCD_classificationsystem.xlsx` class table ships with the data
 - **Method**: 335,709 Landsat images on Google Earth Engine; training samples combining stable samples from the China Land Use/Cover Dataset (CLUD) with visual interpretation; a **random forest** classifier, followed by spatiotemporal filtering and logical reasoning as post-processing. After 2022, with USGS no longer maintaining Collection 1, updates switched to Collection 2 SR
 - **Projection**: Albers equal area. The proj4 string is
@@ -125,7 +125,7 @@ Building height has long been one of the hardest variables to obtain in urban re
 - **Measured characteristics**: 10 m resolution, single-band floating point, units presumably metres; tiled on a **3° × 3°** grid with names like `CNBH10m_X121Y29` (X for longitude, Y for latitude), plus a parallel set of EPSG:4326 tiles; projection is UTM (for example 51N, EPSG:32651)
 - **Valid pixels are very sparse** — around 3% in a sampled tile — which is exactly what you would expect, since building height only means something inside built-up areas
 
-Two warnings. First, **check how NoData is flagged before you use it**: with data this sparse, voids are easily averaged into your statistics as zeros. Second, I could not open Zenodo in this pass (the site was experiencing an outage), so I did not verify the accuracy figures — **take the RMSE and MAE from the paper itself**, not from second-hand numbers.
+Two warnings. First, **check how NoData is flagged before you use it**: with data this sparse, voids are easily averaged into your statistics as zeros. Second, **take the RMSE and MAE from the paper itself**, not from second-hand numbers.
 
 ## 4. Satellite imagery
 
@@ -187,14 +187,14 @@ WorldPop's real trap is not resolution. It is **version conventions** — severa
 
 ### Administrative boundaries and the ten-dash line
 
-- **Common sources**: Alibaba Cloud's DataV.GeoAtlas, GADM, Natural Earth, and similar projects (the `中国_省.geojson` / `中国_县.geojson` files fall into this category)
+- **Common sources**: Alibaba Cloud's DataV.GeoAtlas, GADM, Natural Earth, and similar projects; files such as `中国_省.geojson` / `中国_县.geojson` fall into this category
 - **A compliance point that matters**: publishing a map in China requires that **territorial integrity** be represented correctly — including the South China Sea islands, South Tibet, and Taiwan — with the **ten-dash line** shown properly (formerly the nine-dash line; maps have generally shown ten segments since 2014). This is a hard requirement, not a stylistic choice
 - **The safe route**: use the standard base maps published by the **Ministry of Natural Resources Standard Map Service** (`bzdt.ch.mnr.gov.cn`), or follow its specifications exactly. Generating output straight from a third-party GeoJSON without review is asking for trouble
 - The map approval number (审图号) regime applies to publicly published maps; academic figures are well advised to use standard base maps as well
 
-## 8. Using this collection: version pairs and traps
+## 8. Using these datasets: version pairs and traps
 
-First, the version pairs that are easiest to confuse — there is more "same name, different thing" in this collection than I expected:
+First, the version pairs that are easiest to confuse — "same name, different thing" cases are surprisingly common:
 
 | Easily confused | The difference | Which to use |
 |---|---|---|
@@ -209,16 +209,16 @@ First, the version pairs that are easiest to confuse — there is more "same nam
 
 Then the pitfalls themselves:
 
-1. **Mixed projections.** This collection contains Albers equal-area (TRIMS, CLCD), UTM (CNBH, some DEM products), and WGS84 geographic coordinates (PANDA, WorldPop, GLC_FCS30D). Reproject before overlaying, and **always compute areas in an equal-area projection.**
+1. **Mixed projections.** These datasets span Albers equal-area (TRIMS, CLCD), UTM (CNBH, some DEM products), and WGS84 geographic coordinates (PANDA, WorldPop, GLC_FCS30D). Reproject before overlaying, and **always compute areas in an equal-area projection.**
 2. **Values are not what they look like.** TRIMS needs a divide-by-100 to reach Kelvin; MODIS needs a scale factor; `View_Time` needs × 0.1 and then must be read as UTC hours. Skip the scale factor and your results will be nonsense.
 3. **NoData is a zoo.** TRIMS uses 0, SRTM uses −32768, PANDA uses −32768, this DEM uses 32767, CLCD uses 0, and WorldPop Global 2 uses −99999. **Harmonise the NoData flag before combining datasets**, or a legitimate zero will be averaged into your statistics as missing data — or worse, the other way round.
 4. **Time conventions differ.** CLCD is calendar-year, Landsat is an acquisition instant, TRIMS is four daily snapshots, PANDA is an annual composite. "The same year" is not strictly comparable across them.
 5. **Band index equals year.** In the 23-band GLC_FCS30D file, band number maps to year. Do not assume band 1 is anything other than 2000.
 6. **Thermal resolution is not what the grid says.** Landsat thermal data is 100 m resampled onto a 30 m grid. The grid is 30 m; the information is 100 m.
 
-**If you are actually going to combine these layers, the order I would recommend is:**
+**If you are actually going to combine these layers, the recommended order is:**
 
-1. **Fix the projection first.** Pick an equal-area projection (CLCD and TRIMS both use Albers with a central meridian of 105°E in this collection) and reproject every raster into it. **Do all area statistics in that projection** — measuring area on a latitude/longitude grid is asking for trouble.
+1. **Fix the projection first.** Pick an equal-area projection (CLCD and TRIMS both use Albers with a central meridian of 105°E) and reproject every raster into it. **Do all area statistics in that projection** — measuring area on a latitude/longitude grid is asking for trouble.
 2. **Then align the grids.** Choose one reference raster (usually the finest and most complete), and resample **discrete** data (land cover, DEM, integer nighttime lights) with **nearest neighbour**; only **continuous** data (LST, population) should use bilinear. **Never run cubic convolution on categorical data** — it will interpolate class codes that do not exist.
 3. **Harmonise NoData.** Normalise every dataset's missing value (0 / −32768 / 32767 / −99999) to a single flag — NaN, or one explicit sentinel — before any statistics.
 4. **Convert to physical units.** Multiply every DN by its own scale factor so the values become kelvin, metres, people.
@@ -241,42 +241,17 @@ Getting the order wrong is painful. **Normalise before harmonising NoData** and 
 | OpenStreetMap | **ODbL 1.0** | Attribution; derivative databases must be shared alike |
 | Administrative boundaries / standard maps | Depends on source | Check the **map approval number and standard map** requirements before publishing |
 
-## 10. Two local findings (not about the datasets themselves)
+## 10. Two practical cautions when working with these files
 
-While sorting through all this, I ran into two problems that have nothing to do with data quality in general and everything to do with my particular copy:
+**1. Check large downloads for corruption before use.** The WorldPop Global 2 national 100 m file runs to several hundred MB, and interrupted downloads or storage corruption are not uncommon. The typical symptom is GDAL or rasterio refusing to open the file, reporting something like `TIFFReadDirectory: Failed to read directory at offset ...`; inspecting the header then shows an anomalous TIFF version field (it should read 42) and a first IFD claiming far more entries than the file actually contains. Re-download rather than trying to repair it.
 
-**1. The 465 MB WorldPop national file is corrupt.** `chn_pop_2024_CN_100m_R2025A_v1.tif` cannot be opened by GDAL or rasterio, reporting `TIFFReadDirectory: Failed to read directory at offset 923851936`. Inspecting the header, the TIFF version field reads 43 (it should be 42), and the first IFD claims 56,480 entries — the classic signature of an interrupted download or storage corruption. Re-download it.
-
-**2. My TRIMS copy has Aqua but no Terra.** The product nominally provides four observations per day (Terra day/night plus Aqua day/night). But every DAY and NIGHT folder here holds 365 `TRIMS_Aqua*` data files alongside 365 `TRIMS_Aqua_Day/Night_View_Time*` overpass-time files — **there is no Terra**. In practice that means two observation times per day, not the four the product advertises. Terra would have to be fetched separately.
+**2. Confirm you have both Terra and Aqua for TRIMS.** The product provides four observations per day (Terra day/night plus Aqua day/night). To verify: the DAY and NIGHT folders should hold 365 days × 2 platforms of both data files and `View_Time` overpass-time files. Whichever platform is missing must be fetched separately — with only Aqua you get two observation times per day, not the four the product advertises.
 
 ---
 
-## 11. Appendix: which folder holds which dataset
+## 11. Sources
 
-Since this post is meant to introduce `D:\DATA`, here is the mapping. **The left column is only how the folders happen to be organised; the right column is the dataset's actual identity** — the same data under a different folder name is still the same data, so do not treat folder structure as a property of the dataset.
-
-| Local folder | Dataset |
-|---|---|
-| `Boundary/` | Administrative boundaries (China provinces/counties, countries, ten-dash line) plus self-made study-area extents |
-| `DEM/` | ASTER GDEM v3 (`ASTGTM_*` tiles) + SRTM (`.hgt`) + derived slope / aspect |
-| `CNBH10m/` | CNBH-10m building height |
-| `Land_cover/CLCD/` | CLCD annual land cover, by province |
-| `Land_cover/GLC_FCS30/` | GLC_FCS30 and GLC_FCS30D |
-| `PANDA_China/` | PANDA nighttime lights (1984–2020) |
-| `Pop/` | WorldPop (Global 2 / R2025A) |
-| `TRIMS/` | TRIMS LST, daily 1 km all-weather land surface temperature |
-| `ECOSTRESS/` | ECOSTRESS L1B GEO / L2 LSTE / L2G / L2T |
-| `Landsat/` | Landsat 5 / 7 / 8 Collection 2 Level-2 |
-| `OSM/` | OpenStreetMap (Geofabrik packages) |
-| `LST/` | An empty folder; it used to be where TRIMS reprojection output landed |
-| `Products.zip` | Duplicates the contents of `PANDA_China/` |
-| `List.xlsx` | A self-made short inventory (25 rows, not covering every dataset — not an authoritative index) |
-
-**One last note on what is *not* here**: no Sentinel-1/2, no VIIRS nighttime lights, no precipitation or soil data, and no census statistics at administrative units. In other words, this is closer to a set of variables describing the urban land surface — terrain, land cover, temperature, nighttime lights, building height, population — than to a general-purpose geospatial archive. Knowing what you are missing matters more than acquiring one more dataset.
-
-## 12. Sources
-
-The official entry points I actually consulted, in the order they appear above. Some sites (LP DAAC, Zenodo) were redirecting or briefly unavailable during this pass; if a link breaks, search by DOI.
+The official entry points consulted, in the order they appear above. Some sites (LP DAAC, Zenodo) may redirect or be briefly unavailable; if a link breaks, search by DOI.
 
 - **TRIMS LST**: [National Tibetan Plateau Data Center](https://data.tpdc.ac.cn/), DOI `10.11888/Meteoro.tpdc.271252`
 - **MODIS LST**: [NASA LP DAAC MOD11A1 v061](https://lpdaac.usgs.gov/products/mod11a1v061/)
@@ -292,4 +267,4 @@ The official entry points I actually consulted, in the order they appear above. 
 - **OpenStreetMap**: [Geofabrik downloads](https://download.geofabrik.de/) · [copyright and licence](https://www.openstreetmap.org/copyright)
 - **Standard maps**: [Ministry of Natural Resources Standard Map Service](https://bzdt.ch.mnr.gov.cn/)
 
-*Dataset parameters in this post follow the official documentation and original papers. Sources I actually opened for this pass include: the TRIMS LST official readme and its metadata record at the National Tibetan Plateau Data Center; the official GLC_FCS30D user guide (Aerospace Information Research Institute, CAS); the PANDA paper (Scientific Data, 2024) and the release announcement from the Tsinghua key laboratory; the CLCD metadata record at the National Cryosphere Desert Data Center, which supplied the proj4 string, licence and method description; the FAO catalogue metadata for WorldPop Global 2 / R2025A, which supplied the NoData value, units and citation format; the Remote Sensing of Environment entry for CNBH-10m; and USGS / NASA LP DAAC product documentation. Locally measured values are used only for cross-checking and are labelled as such. Please re-verify versions and DOIs before relying on any of them.*
+*Dataset parameters in this post follow the official documentation and original papers. Key sources consulted include: the TRIMS LST official readme and its metadata record at the National Tibetan Plateau Data Center; the official GLC_FCS30D user guide (Aerospace Information Research Institute, CAS); the PANDA paper (Scientific Data, 2024) and the release announcement from the Tsinghua key laboratory; the CLCD metadata record at the National Cryosphere Desert Data Center, which supplied the proj4 string, licence and method description; the FAO catalogue metadata for WorldPop Global 2 / R2025A, which supplied the NoData value, units and citation format; the Remote Sensing of Environment entry for CNBH-10m; and USGS / NASA LP DAAC product documentation. Measured values are used only for cross-checking and are labelled as such. Please re-verify versions and DOIs before relying on any of them.*
