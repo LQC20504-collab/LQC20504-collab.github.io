@@ -4,6 +4,8 @@ description: "6,106 files and 233 GB spanning terrain, land cover, land surface 
 date: 2026-10-07
 tags: ["Geospatial Data", "Data Notes"]
 comments: true
+ShowToc: true
+TocOpen: false
 ---
 
 I keep a folder at `D:\DATA`: 6,106 files, 233 GB, running from 30-metre terrain to 1-kilometre nighttime lights, from the urban expansion of 1984 to the land cover of 2025. Once a collection gets this big, you start forgetting where each piece came from, what resolution it is, and whose work you are supposed to cite.
@@ -269,6 +271,8 @@ Since this post is meant to introduce `D:\DATA`, here is the mapping. **The left
 | `LST/` | An empty folder; it used to be where TRIMS reprojection output landed |
 | `Products.zip` | Duplicates the contents of `PANDA_China/` |
 | `List.xlsx` | A self-made short inventory (25 rows, not covering every dataset — not an authoritative index) |
+
+**One last note on what is *not* here**: no Sentinel-1/2, no VIIRS nighttime lights, no precipitation or soil data, and no census statistics at administrative units. In other words, this is closer to a set of variables describing the urban land surface — terrain, land cover, temperature, nighttime lights, building height, population — than to a general-purpose geospatial archive. Knowing what you are missing matters more than acquiring one more dataset.
 
 ## 12. Sources
 
