@@ -25,5 +25,5 @@ This is my personal homepage.
 - Favorite singers: James Blunt, Pu Shu, Eason Chan, Bai Ting
 - Favorite team: FC Bayern München
 - Favorite player: Josip Stanišić
-- Favorite TV series/movies: *Yes, Minister*, *Yes, Prime Minister*, *Drawing Sword*, *Romance of the Three Kingdoms*, *Dream of the Red Chamber*
+- Favorite TV series/movies: *Yes, Minister*, *Yes, Prime Minister*, *Drawing Sword*, *Romance of the Three Kingdoms*, *Dream of the Red Chamber*, *Water Margin*, *The Journey to the West*
 - Favorite books: *The Ordinary World*, *To Live*, *Dream of the Red Chamber*

@@ -29,5 +29,5 @@ hideMeta: true
 - 喜欢的歌手：James Blunt, 朴树, 陈奕迅, 白挺
 - 喜欢的球队: 拜仁慕尼黑
 - 喜欢的球员：Josip Stanišić
-- 喜欢看的电视剧/电影：*Yes, Minister*, *Yes, Prime Minister*,《亮剑》,《三国演义》,《红楼梦》
+- 喜欢看的电视剧/电影：*Yes, Minister*, *Yes, Prime Minister*,《亮剑》,《三国演义》,《红楼梦》,《水浒传》,《西游记》
 - 喜欢的书：《平凡的世界》,《活着》,《红楼梦》
